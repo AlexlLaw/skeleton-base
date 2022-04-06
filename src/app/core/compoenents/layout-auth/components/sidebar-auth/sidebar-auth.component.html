@@ -1,0 +1,26 @@
+<input type="checkbox" id="nav-toggle" (click)="sendOpenClose($event)">
+<div class="c-sidebar">
+  <div class="c-sidebar__brand">
+    <h2 class="c-sidebar__brand--title">
+      <span class="las la-dragon"></span>
+      <span class="c-sidebar__brand--span">Dragon System</span>
+    </h2>
+  </div>
+
+  <div class="c-sidebar__menu">
+    <ul>
+      <li>
+        <a [routerLink]="['/']" class="c-sidebar__menu--disabled" >
+          <span class="las la-igloo"></span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dragons']" class="c-sidebar__menu--disabled" >
+          <span class="las la-dragon"></span>
+          <span>Dragões</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

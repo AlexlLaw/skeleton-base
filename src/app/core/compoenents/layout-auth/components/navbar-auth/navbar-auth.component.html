@@ -1,0 +1,21 @@
+<header [ngClass]="openOrClose ? 'c-header__custom' : 'c-header__default'">
+  <h2 class="c-main__content--h2">
+    <label for="nav-toggle">
+      <span class="las la-bars"></span>
+    </label>
+    <span class="c-main__content--span"> Dashboard</span>
+  </h2>
+  <div class="c-main__search_wrapper">
+    <span class="las la-search"></span>
+    <input type="search" class="c-main__search_wrapper--input" placeholder="Search here">
+  </div>
+
+  <div class="c-main__user__wrapper">
+    <img class="c-main__user__wrapper--img" src="../../../../../../assets/img/user3.png" alt="..." width="40px"
+      height="40px">
+    <div>
+      <h4 class="c-main__user__wrapper--h4">Àlex Junior</h4>
+      <small class="c-main__user__wrapper--small" (click)="logout()">Sair </small>
+    </div>
+  </div>
+</header>

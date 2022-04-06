@@ -1,0 +1,52 @@
+<form [formGroup]="loginForm">
+  <div class="row">
+    <div class="col-25">
+      <label for="user" class="l-label" >Usuário</label>
+    </div>
+    <div>
+      <input
+        type="text"
+        class="f-form__control"
+        placeholder="Digite o email.."
+        formControlName="user"
+        inputmode="text"
+        [ngClass]="[
+        isFieldValid(loginForm, 'user') ? 'error-input' : ''
+      ]"
+      >
+      <div class="text-dark" *ngIf="isFieldValid(loginForm, 'user')">
+        {{ loginForm.getFirstErrorFrom('user', 'usuario') }}
+      </div>
+
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="password" class="l-label" >Senha</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          inputmode="text"
+          class="f-form__control"
+          placeholder="Digite a senha.."
+          formControlName="password"
+          [ngClass]="[
+          isFieldValid(loginForm, 'password') ? 'error-input' : ''
+        ]"
+        >
+        <div class="text-dark" *ngIf="isFieldValid(loginForm, 'password')">
+          {{ loginForm.getFirstErrorFrom('password', 'senha') }}
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+        <button type="submit" (click)="submit()" title="Acessar" class="button-custom-access mt-2">
+          Acessar
+        </button>
+    </div>
+
+</form>

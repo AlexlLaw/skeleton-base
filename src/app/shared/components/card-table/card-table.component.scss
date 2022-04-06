@@ -1,0 +1,25 @@
+.c-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .c-card__single {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 2px;
+    box-shadow:  2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .c-card__single:hover {
+    background: var(--primary-color);
+    span {
+      color: var(--white-color)!important;
+    }
+    h1 {
+      color: var(--white-color);
+    }
+  }

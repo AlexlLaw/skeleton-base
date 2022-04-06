@@ -1,0 +1,58 @@
+<div class="c-container">
+  <form [formGroup]="dragonForm">
+    <div class="row">
+      <div class="col-25">
+        <label for="name" class="l-label required">Nome do Dragão</label>
+      </div>
+      <div class="col-75">
+        <input
+          inputmode="text"
+          formControlName="name"
+          type="text"
+          class="f-form__control"
+          id="name"
+          name="name"
+          placeholder="Digite o nome do Dragão..."
+          [ngClass]="[
+          isFieldValid(dragonForm, 'name') ? 'error-input' : ''
+          ]"
+        >
+        <div class="text-danger" *ngIf="isFieldValid(dragonForm, 'name')">
+          {{ dragonForm.getFirstErrorFrom('name', 'nome') }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label class="l-label required" for="type">Tipo</label>
+      </div>
+      <div class="col-75">
+        <input
+          inputmode="text"
+          formControlName="type"
+          type="text"
+          id="type"
+          class="f-form__control"
+          name="lastname"
+          placeholder="Digite o tipo do Dragão"
+          [ngClass]="[
+          isFieldValid(dragonForm, 'type') ? 'error-input' : ''
+        ]"
+        >
+        <div class="text-danger" *ngIf="isFieldValid(dragonForm, 'type')">
+          {{ dragonForm.getFirstErrorFrom('type', 'tipo') }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <input type="submit" title="Cadastrar" class="button-custom-primary b-rigth mt-1" (click)="chooseMethod()" [value]="nameScreen">
+      <a [routerLink]="['/dragons']">
+        <input type="submit" title="Cadastrar" class="button-custom-secondary b-left mt-1" value="cancelar">
+      </a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="recent-grid">
+  <div class="c-card">
+    <div class="c-card__header">
+      <h3><span [class]="icon"></span>{{ title }}</h3>
+      <a [routerLink]="[router]">
+        <button class="button-custom-primary"
+          [title]="nameButton">
+          <span [class]="iconButon"></span>{{ nameButton }}
+        </button>
+      </a>
+    </div>
+    <div class="c-card__body">
+      <ng-content select="[conteudo]">
+      </ng-content>
+    </div>
+  </div>
+</div>

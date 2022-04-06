@@ -1,0 +1,24 @@
+.recent-grid {
+  margin-top: 3.4rem;
+  display: grid;
+  margin: 0;
+	padding: 0;
+}
+
+.c-card {
+  background: #fff;
+  border-radius: 5px;
+
+}
+
+.c-card__header,
+.c-card__body {
+  padding: 1rem;
+}
+
+.c-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1px solid #f0f0f0;
+}

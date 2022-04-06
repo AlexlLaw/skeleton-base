@@ -1,0 +1,8 @@
+<app-sidebar-auth (openOrClose)="receiveOpenOrClose($event)"></app-sidebar-auth>
+<div>
+  <app-navbar-auth [openOrClose]="openOrClose"></app-navbar-auth>
+  <main class="c-main" [ngStyle]="style">
+    <app-loading></app-loading>
+    <router-outlet></router-outlet>
+  </main>
+</div>

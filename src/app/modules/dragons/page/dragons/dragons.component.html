@@ -1,0 +1,12 @@
+<app-card
+  [icon]="'las la-dragon'"
+  [title]="title"
+  [router]="router"
+  [nameButton]="nameScreen"
+  [iconButon]="iconButton"
+>
+<div conteudo>
+  <router-outlet (activate)='onActivate($event)'>
+    </router-outlet>
+  </div>
+</app-card>

@@ -1,0 +1,19 @@
+<div>
+  <table class="table" width="100%">
+      <thead>
+          <ng-container *ngTemplateOutlet="appTableHeader"></ng-container>
+      </thead>
+      <tbody>
+          <ng-container
+              *ngFor="let item of items | paginate: {itemsPerPage: itemsPerPage, currentPage: page, totalItems: items.length }; let index = index">
+              <ng-container *ngTemplateOutlet="appTableBody; context: {$implicit: item, index: index}"></ng-container>
+          </ng-container>
+          <ng-container *ngIf="items.length === 0">
+              <ng-container *ngTemplateOutlet="appTableEmpty"></ng-container>
+          </ng-container>
+      </tbody>
+  </table>
+</div>
+
+<pagination-controls class="c-paginator b-rigth" responsive="true" (pageChange)="page = $event" nextLabel="Proximo" previousLabel="Anterior">
+</pagination-controls>

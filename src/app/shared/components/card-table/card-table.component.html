@@ -1,0 +1,13 @@
+<div class="c-cards">
+  <div class="c-card__single" *ngFor="let item of dataSource" >
+      <div class="c-card__single--div" (click)="actionUpdate(item)">
+        <h3>{{ item.name }}</h3>
+        <span>{{ item.type}}</span>
+      </div>
+      <div>
+        <button class="button-custom-secondary" (click)="actionDelete(item)" type="button" title="Excluir">
+          <span class="las la-trash"></span>
+        </button>
+      </div>
+  </div>
+</div>
