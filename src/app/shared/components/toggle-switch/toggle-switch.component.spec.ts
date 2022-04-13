@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DragonsListComponent } from './dragons-list.component';
+import { ToggleSwitchComponent } from './toggle-switch.component';
 
-describe('DragonsListComponent', () => {
-  let component: DragonsListComponent;
-  let fixture: ComponentFixture<DragonsListComponent>;
+describe('ToggleSwitchComponent', () => {
+  let component: ToggleSwitchComponent;
+  let fixture: ComponentFixture<ToggleSwitchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DragonsListComponent ]
+      declarations: [ ToggleSwitchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DragonsListComponent);
+    fixture = TestBed.createComponent(ToggleSwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

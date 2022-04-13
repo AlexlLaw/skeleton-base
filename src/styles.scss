@@ -56,6 +56,31 @@
     border: 1px solid var(--primary-color);
 }
 
+/*badgers*/
+.badger-success {
+  background-color: var(--success-light-color);
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 16px;
+}
+
+.badger-danger {
+  background-color: var(--danger-color);
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 16px;
+}
+
 /* Responsive layout  */
 @media screen and(max-width: 600px) {
     .col-25,
@@ -164,12 +189,15 @@
 /*Tabela*/
 .table {
     border-collapse: collaapse;
+
      thead tr {
+      th  {
+        padding: 7px;
+      }
       color: var(--white-color);
       background-color: var(--primary-color)!important;
       text-align: left;
     }
-
 
     thead td {
       font-weight: 700;
@@ -202,8 +230,6 @@
       width: 13%;
     }
   }
-
-
 
   /*Responsividade*/
   @media (min-width: 500px) {

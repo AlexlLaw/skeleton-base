@@ -1,0 +1,45 @@
+<div class="c-table__desktop">
+  <app-table-custom [items]="dataSource">
+    <ng-template appTableHeader>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>ativo</th>
+        <th  align="center">Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template appTableBody let-item>
+      <tr>
+        <td><p>{{ item.nome }}</p></td>
+        <td><p>{{ item.cpf | CPF }}</p></td>
+        <td><p [ngClass]="[item.ativo ? 'badger-success' : 'badger-danger']">{{ item.ativo | ativo }}</p></td>
+        <td>
+            <a [routerLink]="['/usuarios/editar', item.id]">
+              <button class="button-custom-secondary ml-2" title="Editar">
+                <span class="las la-pencil-alt"></span>
+              </button>
+            </a>
+
+          <button class="button-custom-secondary" (click)="delete(item)" type="button" title="Excluir">
+            <span class="las la-trash"></span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template appTableEmpty>
+      <tr>
+        <td colspan="11" class="text-center">
+          Nenhum registro foi encontrado
+        </td>
+      </tr>
+    </ng-template>
+  </app-table-custom>
+  </div>
+
+  <div class="c-table__mobile">
+    <app-card-table
+      [dataSource]="dataSource"
+      (update)="redirectUpdate($event)"
+      (delete)="delete($event)">
+    </app-card-table>
+  </div>

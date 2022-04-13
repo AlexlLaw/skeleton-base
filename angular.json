@@ -127,5 +127,10 @@
   "defaultProject": "Sicredi-dragons",
   "cli": {
     "analytics": "c4702ff7-733e-4d4a-9316-7af57b317d77"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

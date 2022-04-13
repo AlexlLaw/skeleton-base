@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { map } from 'rxjs/operators';
+import { UsuarioListDto } from 'src/app/core/dtos/usuarios/usuario-list.dto';
+import { UsuariosService } from 'src/app/modules/usuarios/services/usuarios.service';
 import { SubSink } from 'subsink';
 
-import { DragonsListDto } from 'src/app/core/dtos/dragon/dragons-list.dto';
-import { DragonsService } from 'src/app/modules/dragons/services/dragons.service';
+
 
 @Component({
   selector: 'app-home-index',
@@ -16,20 +17,19 @@ export class HomeIndexComponent implements OnInit, OnDestroy {
   public dataSource: number = 0;
   private _subs = new SubSink();
 
-  constructor(private dragonsService: DragonsService) {}
+  constructor(private usuariosService: UsuariosService) {}
 
   ngOnInit(): void {
     this.getAll();
   }
 
   public getAll(): void {
-    this._subs.sink = this.dragonsService.get()
-    .pipe(map(res => res.map((dragon: any) => new DragonsListDto(dragon))))
+    this._subs.sink = this.usuariosService.get()
+    .pipe(map(res => res.map((item: any) => new UsuarioListDto(item))))
     .subscribe((res) => {
       this.dataSource = res.length;
     });
   }
-
 
   ngOnDestroy() {
     this._subs.unsubscribe();

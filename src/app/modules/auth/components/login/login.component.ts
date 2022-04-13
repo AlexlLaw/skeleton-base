@@ -32,10 +32,8 @@ export class LoginComponent extends FormBase {
     if (this.loginForm.valid) {
       const dados = this.loginForm.getDadosEnvio();
 
-      this.authService.getAuthenticate(dados).then((res) => {
-        if (res) {
+      this.authService.postAuthenticate(dados).subscribe(() => {
           this.router.navigateByUrl('/');
-        }
       });
     }
   }

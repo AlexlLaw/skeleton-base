@@ -14,6 +14,9 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from '../core/interceptor/loading.interceptor';
 import { CardTableComponent } from './components/card-table/card-table.component';
+import { CPFPipe } from './pipes/cpf.pipe';
+import { AtivoPipe } from './pipes/ativo.pipe';
+import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { CardTableComponent } from './components/card-table/card-table.component
     TableEmptyDirective,
     LoadingComponent,
     CardTableComponent,
+    CPFPipe,
+    AtivoPipe,
+    ToggleSwitchComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +45,10 @@ import { CardTableComponent } from './components/card-table/card-table.component
     TableBodyDirective,
     TableEmptyDirective,
     LoadingComponent,
-    CardTableComponent
+    CardTableComponent,
+    CPFPipe,
+    AtivoPipe,
+    ToggleSwitchComponent
   ],
   providers: [
     {

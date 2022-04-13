@@ -1,0 +1,101 @@
+<div class="c-container">
+  <form [formGroup]="usuarioForm">
+
+    <div class="row">
+      <div class="col-25">
+        <label class="l-label required" for="cpf">CPF</label>
+      </div>
+      <div class="col-75">
+        <input inputmode="text" formControlName="cpf" mask="000.000.000-00" type="text" id="cpf" class="f-form__control" name="cpf"
+          placeholder="Digite o cpf" [ngClass]="[
+          isFieldValid(usuarioForm, 'cpf') ? 'error-input' : ''
+        ]">
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'cpf')">
+          {{ usuarioForm.getFirstErrorFrom('cpf', 'cpf') }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="nome" class="l-label required">Nome</label>
+      </div>
+      <div class="col-75">
+        <input inputmode="text" formControlName="nome" type="text" class="f-form__control" id="nome" name="nome"
+          placeholder="Digite o nome ..." [ngClass]="[
+          isFieldValid(usuarioForm, 'nome') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'nome')">
+          {{ usuarioForm.getFirstErrorFrom('nome', 'nome') }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="sobrenome" class="l-label required">Sobrenome</label>
+      </div>
+      <div class="col-75">
+        <input inputmode="text" formControlName="sobrenome" type="text" class="f-form__control" id="sobrenome"
+          name="sobrenome" placeholder="Digite o sobrenome..." [ngClass]="[
+          isFieldValid(usuarioForm, 'sobrenome') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'sobrenome')">
+          {{ usuarioForm.getFirstErrorFrom('sobrenome', 'sobrenome') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="ativo" class="l-label required">ativo</label>
+      </div>
+      <div class="col-75">
+        <toggle-switch [selected]="usuarioForm.ativo"></toggle-switch>
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'ativo')">
+          {{ usuarioForm.getFirstErrorFrom('ativo', 'ativo') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="restricoes" class="l-label required">restricoes</label>
+      </div>
+      <div class="col-75">
+        <select class="f-form__control" formControlName="restricoes">
+        <option *ngFor="let enum of enumRestriction.getAllForSelect()" [value]="enum.value">{{enum.name}}</option>
+        </select>
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'restricoes')">
+          {{ usuarioForm.getFirstErrorFrom('restricoes', 'restricoes') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="senha" class="l-label required">senha</label>
+      </div>
+      <div class="col-75">
+        <input inputmode="text" formControlName="senha" type="text" class="f-form__control" id="senha"
+          name="senha" placeholder="Digite o senha..." [ngClass]="[
+          isFieldValid(usuarioForm, 'senha') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'senha')">
+          {{ usuarioForm.getFirstErrorFrom('senha', 'senha') }}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <input type="submit" title="Cadastrar" class="button-custom-primary b-rigth mt-1" (click)="chooseMethod()"
+        [value]="nameScreen">
+      <a [routerLink]="['/usuarios']">
+        <input type="submit" title="Cadastrar" class="button-custom-secondary b-left mt-1" value="cancelar">
+      </a>
+    </div>
+  </form>
+</div>

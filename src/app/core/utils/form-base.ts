@@ -1,10 +1,9 @@
-import { OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { SubSink } from 'subsink';
 
-export class FormBase implements OnInit {
+export class FormBase {
 
   public pageId = '';
   public nameScreen = '';
@@ -12,10 +11,6 @@ export class FormBase implements OnInit {
 
   constructor(public router?: Router, public activatedRoute?: ActivatedRoute) {
     this.getParamsScreen();
-  }
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   public isFieldValid(form: FormGroup, field: string): boolean {

@@ -22,9 +22,9 @@ export const APP_ROUTES: Routes = [
           import('./modules/home/pages/home-index/home.module').then((m) => m.HomeModule),
       },
       {
-        path: 'dragons',
+        path: 'usuarios',
         loadChildren: () =>
-          import('././modules/dragons/dragons.module').then((m) => m.DragonsModule),
+          import('././modules/usuarios/usuarios.module').then((m) => m.UsuariosModule),
       }
     ],
   },

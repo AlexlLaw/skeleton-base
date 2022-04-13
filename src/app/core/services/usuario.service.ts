@@ -17,11 +17,11 @@ export class UsuarioService extends BaseService<any> {
     super(http, urlConfigs.url_account);
   }
 
-  public set setUser(usuario: string) {
+  public set setToken(usuario: any) {
     this.tokenService.setToken(usuario);
   }
 
-  public get getUser(): Observable<any> {
+  public get getToken(): Observable<any> {
     return this.userSubject.asObservable();
   }
 
