@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'CPF'
+  name: 'cpf'
 })
 export class CPFPipe implements PipeTransform {
 
@@ -18,6 +18,5 @@ export class CPFPipe implements PipeTransform {
         );
 
     return valorFormatado;
-}
-
+  }
 }

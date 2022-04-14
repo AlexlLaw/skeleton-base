@@ -11,7 +11,7 @@
     <ng-template appTableBody let-item>
       <tr>
         <td><p>{{ item.nome }}</p></td>
-        <td><p>{{ item.cpf | CPF }}</p></td>
+        <td><p>{{ item.cpf | cpf }}</p></td>
         <td><p [ngClass]="[item.ativo ? 'badger-success' : 'badger-danger']">{{ item.ativo | ativo }}</p></td>
         <td>
             <a [routerLink]="['/usuarios/editar', item.id]">

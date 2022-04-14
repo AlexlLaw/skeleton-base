@@ -1,15 +1,17 @@
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { LoginDto } from 'src/app/core/dtos/login/login.dto';
+import { ValidatorsCustom } from 'src/app/core/utils/validators-custom';
 
 export class LoginForm extends FormGroup {
   private _errorMessages = {
     required: 'O campo %s é obrigatório.',
+    cpfInvalid: 'Digite um CPF valido'
   };
 
   constructor() {
     super({
-      user: new FormControl(null, [Validators.required]),
+      user: new FormControl(null, [Validators.required, ValidatorsCustom.validCpf, Validators.maxLength(11)]),
       password: new FormControl(null, [Validators.required]),
     });
   }

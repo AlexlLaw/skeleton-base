@@ -6,8 +6,11 @@
     <div>
       <input
         type="text"
+        mask mascara="999.999.999-99"
+        maxlength="14"
         class="f-form__control"
-        placeholder="Digite o email.."
+        id="cpf"
+        placeholder="Digite o cpf..."
         formControlName="user"
         inputmode="text"
         [ngClass]="[

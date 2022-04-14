@@ -14,9 +14,12 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from '../core/interceptor/loading.interceptor';
 import { CardTableComponent } from './components/card-table/card-table.component';
-import { CPFPipe } from './pipes/cpf.pipe';
 import { AtivoPipe } from './pipes/ativo.pipe';
 import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
+import { MaskDirective } from './diretrivas/mask.directive';
+import { CPFPipe } from './pipes/cpf.pipe';
+import { OnlyCharDirective } from './diretrivas/only-char.directive';
+import { OnlyNumberDirective } from './diretrivas/only-number.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.
     CPFPipe,
     AtivoPipe,
     ToggleSwitchComponent,
+    MaskDirective,
+    OnlyCharDirective,
+    OnlyNumberDirective,
   ],
   imports: [
     CommonModule,
@@ -48,15 +54,18 @@ import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.
     CardTableComponent,
     CPFPipe,
     AtivoPipe,
-    ToggleSwitchComponent
+    ToggleSwitchComponent,
+    MaskDirective,
+    OnlyCharDirective,
+    OnlyNumberDirective,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

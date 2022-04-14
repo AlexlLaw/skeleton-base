@@ -1,17 +1,19 @@
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { UsuarioCreateDto } from 'src/app/core/dtos/usuarios/usuario-create.dto';
 import { UsuarioUpdateDto } from 'src/app/core/dtos/usuarios/usuario-update.dto';
+import { ValidatorsCustom } from 'src/app/core/utils/validators-custom';
 
 export class UsuarioForm extends FormGroup {
   private _errorMessages = {
     required: 'O campo %s é obrigatório.',
+    cpfInvalid: 'Digite um CPF valido'
   };
 
   constructor() {
     super({
       id: new FormControl(null),
       nome: new FormControl(null, [Validators.required]),
-      cpf: new FormControl(null, [Validators.required]),
+      cpf: new FormControl(null, [Validators.required, ValidatorsCustom.validCpf, Validators.maxLength(11)]),
       sobrenome: new FormControl(null, [Validators.required]),
       ativo: new FormControl(false, [Validators.required]),
       restricoes: new FormControl('', [Validators.required]),

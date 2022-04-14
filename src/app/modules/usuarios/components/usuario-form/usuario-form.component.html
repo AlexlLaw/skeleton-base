@@ -6,10 +6,19 @@
         <label class="l-label required" for="cpf">CPF</label>
       </div>
       <div class="col-75">
-        <input inputmode="text" formControlName="cpf" mask="000.000.000-00" type="text" id="cpf" class="f-form__control" name="cpf"
-          placeholder="Digite o cpf" [ngClass]="[
+        <input
+          mask mascara="999.999.999-99"
+          inputmode="text"
+          formControlName="cpf"
+          type="text"
+          maxlength="14"
+          id="cpf"
+          class="f-form__control"
+          name="cpf"
+          placeholder="Digite o cpf...."
+          [ngClass]="[
           isFieldValid(usuarioForm, 'cpf') ? 'error-input' : ''
-        ]">
+          ]">
         <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'cpf')">
           {{ usuarioForm.getFirstErrorFrom('cpf', 'cpf') }}
         </div>
@@ -52,7 +61,7 @@
       <div class="col-25">
         <label for="ativo" class="l-label required">ativo</label>
       </div>
-      <div class="col-75">
+      <div class="col-75 mt-1">
         <toggle-switch [selected]="usuarioForm.ativo"></toggle-switch>
         <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'ativo')">
           {{ usuarioForm.getFirstErrorFrom('ativo', 'ativo') }}
@@ -66,7 +75,7 @@
       </div>
       <div class="col-75">
         <select class="f-form__control" formControlName="restricoes">
-        <option *ngFor="let enum of enumRestriction.getAllForSelect()" [value]="enum.value">{{enum.name}}</option>
+         <option *ngFor="let enum of enumRestriction.getAllForSelect()" [value]="enum.value">{{ enum.name }}</option>
         </select>
         <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'restricoes')">
           {{ usuarioForm.getFirstErrorFrom('restricoes', 'restricoes') }}
