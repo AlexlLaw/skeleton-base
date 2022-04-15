@@ -31,9 +31,8 @@ export class LoginComponent extends FormBase {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.valid) {
       const dados = this.loginForm.getDadosEnvio();
-
       this.authService.postAuthenticate(dados).subscribe(() => {
-          this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/');
       });
     }
   }

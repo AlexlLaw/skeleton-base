@@ -1,4 +1,5 @@
 import { AfterContentChecked, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Util } from 'src/app/core/utils/util';
 
 declare var $: any;
 
@@ -11,10 +12,14 @@ export class SidebarAuthComponent implements AfterContentChecked {
 
   @Output() public openOrClose: EventEmitter<boolean> = new  EventEmitter<boolean>();
   public openOrCloseSideBar: boolean = false;
-  constructor() { }
 
   ngAfterContentChecked() {
     this.activeSideBar();
+  }
+
+  public get userRestriction() {
+    console.log(Util.getRestrictionSession());
+    return Util.getRestrictionSession();
   }
 
  public activeSideBar(): void {
@@ -30,8 +35,7 @@ export class SidebarAuthComponent implements AfterContentChecked {
     }).addClass('c-sidebar__menu--active');
   }
 
-  public sendOpenClose(event: any): void {
+  public sendOpenClose(event?: any): void {
     this.openOrClose.emit(this.openOrCloseSideBar = !this.openOrCloseSideBar);
   }
-
 }

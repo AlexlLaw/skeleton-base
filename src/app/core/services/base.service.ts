@@ -14,9 +14,21 @@ export class BaseService<T> {
 
   constructor(protected httpClient: HttpClient, @Inject(String) protected path) {}
 
+  public headerOptions = (): any => {
+    const TOKEN = localStorage.getItem('authToken') ? 'Bearer ' + localStorage.getItem('authToken') : '';
+    console.log(TOKEN);
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+         Authorization: TOKEN,
+      }),
+      observe: 'response' as 'response'
+    };
+  }
+
   public getById = (id: string): Observable<any> => {
     return this.httpClient
-      .get(`${this.baseUrl}${this.path}/${id}`)
+      .get(`${this.baseUrl}${this.path}/${id}`, this.headerOptions())
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 
@@ -53,4 +65,5 @@ export class BaseService<T> {
       .delete(`${this.baseUrl}${this.path}/${id}`)
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
+
 }

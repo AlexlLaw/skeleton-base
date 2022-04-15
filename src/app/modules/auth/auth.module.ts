@@ -7,11 +7,12 @@ import { AUTH_ROUTES } from './auth-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PrimeiroAcessoComponent } from './components/primeiro-acesso/primeiro-acesso.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, PrimeiroAcessoComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(AUTH_ROUTES),

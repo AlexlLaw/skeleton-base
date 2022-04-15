@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -15,7 +16,7 @@ import { urlConfigs } from '../utils/url-configs';
 })
 export class AuthService extends BaseService<any> {
 
-  constructor(protected http: HttpClient, private usuarioService: UsuarioService) {
+  constructor(protected http: HttpClient, private usuarioService: UsuarioService, public router: Router) {
     super(http, urlConfigs.url_account);
   }
 
@@ -28,6 +29,9 @@ export class AuthService extends BaseService<any> {
       { observe: 'response' })
     .pipe(tap(res => {
       const authToken = res.body.token;
+      console.log(res);
+      localStorage.setItem('name', btoa(JSON.stringify(res.body.user.nome)));
+      localStorage.setItem('restricao', btoa(JSON.stringify(res.body.user.restricoes)));
       this.usuarioService.setToken = authToken;
     }));
   }

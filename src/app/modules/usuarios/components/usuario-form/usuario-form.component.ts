@@ -41,7 +41,7 @@ export class UsuarioFormComponent extends FormBase implements OnInit, OnDestroy 
 
   public getById(): void {
     this.subs.sink = this.usuarioService.getById(this.pageId)
-      .pipe(map(res => new UsuarioInfoDto(res))).subscribe((res) => {
+      .pipe(map(res => new UsuarioInfoDto(res.body))).subscribe((res) => {
         this.usuarioForm.patchValueForm(res, this.usuarioForm);
       });
   }

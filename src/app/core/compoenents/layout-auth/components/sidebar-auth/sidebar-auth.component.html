@@ -16,7 +16,7 @@
         </a>
       </li>
 
-      <li>
+      <li *ngIf="userRestriction === 'manager'">
         <a [routerLink]="['/usuarios']" class="c-sidebar__menu--disabled" >
           <span class="las la-users"></span>
           <span>Usuarios</span>
