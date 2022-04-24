@@ -6,6 +6,7 @@ import { HomeIndexComponent } from './home-index.component';
 export const HOME_ROUTES: Routes = [
   {
     path: '',
-    component: HomeIndexComponent
+    component: HomeIndexComponent,
+    data: { titulo: 'home' }
   }
 ];

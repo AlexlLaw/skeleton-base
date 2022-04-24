@@ -9,4 +9,9 @@ export class Util {
     const restriction = localStorage.getItem('restricao');
     return restriction ? JSON.parse(atob(restriction)) : null;
   }
+
+  static getIdUserSession() {
+    const restriction = localStorage.getItem('restricao');
+    return restriction ? JSON.parse(atob(restriction)) : null;
+  }
 }
