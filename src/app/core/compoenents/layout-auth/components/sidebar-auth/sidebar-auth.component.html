@@ -3,7 +3,7 @@
   <div class="c-sidebar__brand">
     <h2 class="c-sidebar__brand--title">
       <span class="las la-dragon"></span>
-      <span class="c-sidebar__brand--span">Skeleton base</span>
+      <span class="c-sidebar__brand--span">Finances</span>
     </h2>
   </div>
 
@@ -17,7 +17,7 @@
       </li>
 
       <li *ngIf="userRestriction === 'manager'">
-        <a [routerLink]="['/usuarios']" class="c-sidebar__menu--disabled" >
+        <a [routerLink]="['/usuarios/listar']" class="c-sidebar__menu--disabled" >
           <span class="las la-users"></span>
           <span>Usuarios</span>
         </a>

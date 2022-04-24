@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ParamsService } from 'src/app/core/services/params.service';
 import { RouterBase } from 'src/app/core/utils/router-base';
-
-import { UsuarioFormComponent } from '../../components/usuario-form/usuario-form.component';
-import { UsuarioListComponent } from '../../components/usuario-list/usuario-list.component';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.scss']
 })
-export class UsuariosComponent extends RouterBase {
+export class UsuariosComponent extends RouterBase implements OnInit {
 
-  constructor() {
-    super(UsuarioListComponent, UsuarioFormComponent, 'Usuarios', '/usuarios', '/usuarios/cadastrar');
+  constructor(public paramsService: ParamsService, public titleService: Title) {
+    super(paramsService, titleService);
   }
 
   public onActivate(event: any) {
-    this.setParameters(event);
+    console.log(this.router);
   }
 }

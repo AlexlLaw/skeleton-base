@@ -18,7 +18,6 @@ export class SidebarAuthComponent implements AfterContentChecked {
   }
 
   public get userRestriction() {
-    console.log(Util.getRestrictionSession());
     return Util.getRestrictionSession();
   }
 

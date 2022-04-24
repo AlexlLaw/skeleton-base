@@ -32,9 +32,9 @@ export class FormBase {
    */
   public getScreenName(id?: string, detalhes = false): string {
     return !id || !id.trim()
-      ? 'ADICIONAR'
+      ? 'Adicionar'
       : id && !detalhes
-      ? 'ATUALIZAR'
-      : 'VISUALIZAR';
+      ? 'Atualizar'
+      : 'Visualizar';
   }
 }

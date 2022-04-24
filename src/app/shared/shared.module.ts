@@ -41,8 +41,8 @@ import { OnlyNumberDirective } from './diretrivas/only-number.directive';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    NgxPaginationModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   exports: [
     CardComponent,

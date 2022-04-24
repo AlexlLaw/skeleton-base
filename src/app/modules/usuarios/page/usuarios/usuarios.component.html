@@ -1,10 +1,4 @@
-<app-card
-  [icon]="'las la-users'"
-  [title]="title"
-  [router]="router"
-  [nameButton]="nameScreen"
-  [iconButon]="iconButton"
->
+<app-card [title]="title" [subtitle]="subtitle" [router]="router" [nameButton]="nameScreen">
 <div conteudo>
   <router-outlet (activate)='onActivate($event)'>
     </router-outlet>
