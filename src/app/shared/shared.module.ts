@@ -20,6 +20,8 @@ import { MaskDirective } from './diretrivas/mask.directive';
 import { CPFPipe } from './pipes/cpf.pipe';
 import { OnlyCharDirective } from './diretrivas/only-char.directive';
 import { OnlyNumberDirective } from './diretrivas/only-number.directive';
+import { MesesPipe } from './pipes/meses.pipe';
+import { MoneyPipe } from './pipes/money.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { OnlyNumberDirective } from './diretrivas/only-number.directive';
     MaskDirective,
     OnlyCharDirective,
     OnlyNumberDirective,
+    MesesPipe,
+    MoneyPipe,
   ],
   imports: [
     CommonModule,
@@ -58,6 +62,8 @@ import { OnlyNumberDirective } from './diretrivas/only-number.directive';
     MaskDirective,
     OnlyCharDirective,
     OnlyNumberDirective,
+    MesesPipe,
+    MoneyPipe
   ],
   providers: [
     {

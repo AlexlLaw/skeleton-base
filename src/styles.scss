@@ -98,6 +98,12 @@
     clear: both;
 }
 
+.col-15 {
+  float: left;
+  width: 15%;
+  margin-top: 6px;
+}
+
 .col-25 {
     float: left;
     width: 25%;
@@ -148,6 +154,10 @@
 
 .mt-1 {
   margin-top: 10px;
+}
+
+.mb-1 {
+  margin-bottom: 10px;
 }
 
 /*Paginator*/

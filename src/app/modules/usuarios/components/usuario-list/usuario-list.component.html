@@ -14,11 +14,11 @@
         <td><p>{{ item.cpf | cpf }}</p></td>
         <td><p [ngClass]="[item.ativo ? 'badger-success' : 'badger-danger']">{{ item.ativo | ativo }}</p></td>
         <td>
-            <a [routerLink]="['/usuarios/editar', item.id]">
-              <button class="button-custom-secondary ml-2" title="Editar">
-                <span class="las la-pencil-alt"></span>
-              </button>
-            </a>
+          <a [routerLink]="['/usuarios/editar', item.id]">
+            <button class="button-custom-secondary ml-2" title="Editar">
+              <span class="las la-pencil-alt"></span>
+            </button>
+          </a>
 
           <button class="button-custom-secondary" (click)="delete(item)" type="button" title="Excluir">
             <span class="las la-trash"></span>

@@ -9,7 +9,7 @@ export class CardComponent {
 
   @Input() public title: string = ' Card';
   @Input() public subtitle: string = ' ';
-  @Input() public nameButton: string = ' Adicionar';
+  @Input() public nameButton: string;
   @Input() public icon: string = 'las la-igloo';
   @Input() public router: string = '';
   @Input() public iconButon: string = 'las la-plus';

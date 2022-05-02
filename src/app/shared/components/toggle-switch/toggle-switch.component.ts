@@ -8,5 +8,5 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./toggle-switch.component.scss']
 })
 export class ToggleSwitchComponent {
-  @Input() selected = new FormControl(false);
+  @Input() selected = new FormControl();
 }

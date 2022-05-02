@@ -2,7 +2,7 @@
   <div class="c-card">
     <div class="c-card__header">
       <h3><span [class]="icon"></span> {{ title  }}/{{ subtitle }} </h3>
-      <a [routerLink]="[router]">
+      <a [routerLink]="[router]" *ngIf="nameButton">
         <button class="button-custom-primary"
           [title]="nameButton">
           <span [class]="iconButon"></span>{{ nameButton }}

@@ -1,0 +1,44 @@
+<div class="c-table__desktop">
+  <H1>Valor total : {{ valueTotal | currency : 'BRL' }}</H1>
+  <app-table-custom [items]="dataSource">
+    <ng-template appTableHeader>
+      <tr>
+        <th id="1">Descrição</th>
+        <th id="1">Valor</th>
+        <th id="1">Fixo</th>
+        <th id="1">Pago</th>
+        <th id="2" align="center">Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template appTableBody let-item>
+      <tr>
+
+        <td><p>{{ item.descricao }}</p></td>
+        <td><p>{{ item.valor | currency : 'BRL' }}</p></td>
+        <td><p> <input type="checkbox" [checked]="item.fixo"></p></td>
+        <td><p><input type="checkbox" [checked]="item.fixo"></p></td>
+        <td>
+            <a [routerLink]="['/contas/detalhes-mensal', item]">
+              <button class="button-custom-secondary ml-2" title="detalhes do mês">
+                <span class="las la-arrow-right"></span>
+              </button>
+            </a>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template appTableEmpty>
+      <tr>
+        <td colspan="11" class="text-center">
+          Nenhum registro foi encontrado
+        </td>
+      </tr>
+    </ng-template>
+  </app-table-custom>
+  </div>
+
+  <div class="c-table__mobile">
+    <app-card-table
+      [dataSource]="dataSource"
+      >
+    </app-card-table>
+  </div>

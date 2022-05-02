@@ -16,7 +16,6 @@ export class BaseService<T> {
 
   public headerOptions = (): any => {
     const TOKEN = localStorage.getItem('authToken') ? 'Bearer ' + localStorage.getItem('authToken') : '';
-    console.log(TOKEN);
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -28,7 +27,7 @@ export class BaseService<T> {
 
   public getById = (id: string): Observable<any> => {
     return this.httpClient
-      .get(`${this.baseUrl}${this.path}/${id}`, this.headerOptions())
+      .get(`${this.baseUrl}${this.path}/${id }`, this.headerOptions())
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 
@@ -38,10 +37,10 @@ export class BaseService<T> {
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 
-  public getByFilter = (params?: URLSearchParams): Observable<any> => {
+  public getByFilter = (userId: number, params?: URLSearchParams): Observable<any> => {
     const filters = params ? `?${params.toString()}` : '';
     return this.httpClient
-      .get(`${this.baseUrl}${this.path}${filters}`)
+      .get(`${this.baseUrl}${this.path}/${userId}${filters}`)
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 

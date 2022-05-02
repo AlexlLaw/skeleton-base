@@ -1,0 +1,6 @@
+<app-card [title]="title" [subtitle]="subtitle" [nameButton]="nameScreen">
+  <div conteudo>
+    <router-outlet (activate)='onActivate($event)'>
+      </router-outlet>
+    </div>
+  </app-card>
