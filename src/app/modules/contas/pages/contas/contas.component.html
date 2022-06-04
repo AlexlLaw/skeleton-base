@@ -1,4 +1,4 @@
-<app-card [title]="title" [subtitle]="subtitle" [nameButton]="nameScreen">
+<app-card [title]="title" [subtitle]="subtitle" [nameButton]="nameScreen" [router]="routerAlternative ? routerAlternative : router">
   <div conteudo>
     <router-outlet (activate)='onActivate($event)'>
       </router-outlet>

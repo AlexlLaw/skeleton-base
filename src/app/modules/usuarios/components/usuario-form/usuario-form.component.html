@@ -59,7 +59,7 @@
 
     <div class="row">
       <div class="col-25">
-        <label for="ativo" class="l-label required">ativo</label>
+        <label for="ativo" class="l-label required">Ativo</label>
       </div>
       <div class="col-75 mt-1">
         <toggle-switch [selected]="usuarioForm.ativo"></toggle-switch>
@@ -71,7 +71,7 @@
 
     <div class="row">
       <div class="col-25">
-        <label for="restricoes" class="l-label required">restricoes</label>
+        <label for="restricoes" class="l-label required">Restricoes</label>
       </div>
       <div class="col-75">
         <select class="f-form__control" formControlName="restricoes">
@@ -85,10 +85,25 @@
 
     <div class="row">
       <div class="col-25">
-        <label for="senha" class="l-label required">senha</label>
+        <label for="salario" class="l-label required">Salario</label>
       </div>
       <div class="col-75">
-        <input inputmode="text" formControlName="senha" type="text" class="f-form__control" id="senha"
+        <input inputmode="text" formControlName="salario" type="text" class="f-form__control" id="salario"
+          name="salario" placeholder="Digite o salario..."  money [currencyMask]="{prefixed: 'R$'}" [ngClass]="[
+          isFieldValid(usuarioForm, 'salario') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(usuarioForm, 'salario')">
+          {{ usuarioForm.getFirstErrorFrom('salario', 'salario') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="senha" class="l-label required">Senha</label>
+      </div>
+      <div class="col-75">
+        <input inputmode="text" formControlName="senha" type="password" class="f-form__control" id="senha"
           name="senha" placeholder="Digite o senha..." [ngClass]="[
           isFieldValid(usuarioForm, 'senha') ? 'error-input' : ''
           ]">
@@ -97,7 +112,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="row">
       <input type="submit" title="Cadastrar" class="button-custom-primary b-rigth mt-1" (click)="chooseMethod()"

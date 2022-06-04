@@ -98,16 +98,36 @@
     clear: both;
 }
 
+.col-8 {
+  float: left;
+  width: 8%;
+  margin-top: 6px;
+}
+
+.col-10 {
+  float: left;
+  width: 10%;
+  margin-top: 6px;
+}
+
+
 .col-15 {
   float: left;
   width: 15%;
   margin-top: 6px;
 }
 
+
 .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
+}
+
+.col-60 {
+  float: left;
+  width: 60%;
+  margin-top: 6px;
 }
 
 .col-75 {
@@ -144,8 +164,12 @@
 }
 
 /*margins*/
-.ml-2 {
+.mr-2 {
   margin-right: 20px;
+}
+
+.ml-2 {
+  margin-left: 20px;
 }
 
 .mt-2 {
@@ -159,6 +183,8 @@
 .mb-1 {
   margin-bottom: 10px;
 }
+
+
 
 /*Paginator*/
 

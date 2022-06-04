@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ParamsService {
 
   private _subtitle: string;
+  private _typePage: string;
 
   constructor() { }
 
@@ -15,5 +16,13 @@ export class ParamsService {
 
   public set setSubtitle(value: string) {
     this._subtitle = value;
+  }
+
+  public get getTypePage(): string {
+    return this._typePage;
+  }
+
+  public set setTypePage(value: string) {
+    this._typePage = value;
   }
 }

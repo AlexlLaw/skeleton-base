@@ -15,6 +15,5 @@ export class UsuariosComponent extends RouterBase implements OnInit {
   }
 
   public onActivate(event: any) {
-    console.log(this.router);
   }
 }

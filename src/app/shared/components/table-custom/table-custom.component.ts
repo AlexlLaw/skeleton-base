@@ -15,11 +15,11 @@ export class TableCustomComponent implements OnInit {
   @ContentChild(TableEmptyDirective, { static: true, read: TemplateRef }) appTableEmpty;
 
   @Input() items = new Array();
-  @Input() itemsPerPage = 10;
+  @Input() itemsPerPage = 15;
   @Input() paginator = true;
   @Input() classPaginator = 'bcg-navy';
   public page: number = 1;
-  public itemPerPage: number = 10;
+  // public itemPerPage: number = 15;
   public pageCurrent = 1;
 
   constructor() { }

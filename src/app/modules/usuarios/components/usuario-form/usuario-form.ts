@@ -1,4 +1,5 @@
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+
 import { UsuarioCreateDto } from 'src/app/core/dtos/usuarios/usuario-create.dto';
 import { UsuarioUpdateDto } from 'src/app/core/dtos/usuarios/usuario-update.dto';
 import { ValidatorsCustom } from 'src/app/core/utils/validators-custom';
@@ -18,6 +19,7 @@ export class UsuarioForm extends FormGroup {
       ativo: new FormControl(false, [Validators.required]),
       restricoes: new FormControl('', [Validators.required]),
       senha: new FormControl(null, [Validators.required]),
+      salario: new FormControl('', [Validators.required]),
     });
   }
 
@@ -47,6 +49,10 @@ export class UsuarioForm extends FormGroup {
 
   public get senha(): AbstractControl {
     return this.get('senha');
+  }
+
+  public get salario(): AbstractControl {
+    return this.get('salario');
   }
 
   public markAllAsTouched(): void {

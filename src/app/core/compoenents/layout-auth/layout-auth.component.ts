@@ -33,6 +33,7 @@ export class LayoutAuthComponent {
       .subscribe((event) => {
         this.titleService.setTitle(event['titulo']);
         this.paramsService.setSubtitle = event['subtitle'];
+        this.paramsService.setTypePage = event['typePage'];
         }
       );
   }

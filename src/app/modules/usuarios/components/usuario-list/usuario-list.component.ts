@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { map } from 'rxjs/operators';
 import { UsuarioListDto } from 'src/app/core/dtos/usuarios/usuario-list.dto';
-
 import { UsuarioService } from 'src/app/core/services/usuario.service';
 import { MSG_SUCCES } from 'src/app/core/utils/constants';
 import { SweetalertCustom } from 'src/app/core/utils/sweetalert-custom';

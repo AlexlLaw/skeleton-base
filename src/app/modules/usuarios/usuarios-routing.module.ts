@@ -12,17 +12,17 @@ export const USUARIO_ROUTES: Routes = [
       {
         path: 'listar',
         component: UsuarioListComponent,
-        data: { titulo: 'Usuarios', subtitle: 'Listar' }
+        data: { titulo: 'Usuarios', subtitle: 'Listar', typePage: 'listar' }
       },
       {
         path: 'cadastrar',
         component: UsuarioFormComponent,
-        data: { titulo: 'Usuarios', subtitle: 'Cadastrar' }
+        data: { titulo: 'Usuarios', subtitle: 'Cadastrar', typePage: 'cadastrar' }
       },
       {
         path: 'editar/:id',
         component: UsuarioFormComponent,
-        data: { titulo: 'Usuarios', subtitle: 'Editar' }
+        data: { titulo: 'Usuarios', subtitle: 'Editar', typePage: 'editar' }
       }
     ]
   }

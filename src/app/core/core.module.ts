@@ -10,9 +10,6 @@ import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptor/loading.interceptor';
 
-
-
-
 @NgModule({
   declarations: [
     LayoutNoAuthComponent,

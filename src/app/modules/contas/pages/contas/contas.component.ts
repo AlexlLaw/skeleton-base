@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+
 import { ParamsService } from 'src/app/core/services/params.service';
 import { RouterBase } from 'src/app/core/utils/router-base';
 
@@ -15,7 +16,7 @@ export class ContasComponent extends RouterBase implements OnInit {
     super(paramsService, titleService);
   }
 
-  public onActivate(event: any) {
-    this.nameScreen = event.nameScreen;
+  public onActivate(event: any): void {
+    this.setRoutersAndNameScreeCustom(event);
   }
 }

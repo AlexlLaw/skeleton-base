@@ -10,11 +10,12 @@ import { ContasComponent } from './pages/contas/contas.component';
 import { MesesFilterComponent } from './components/meses/meses-filter/meses-filter.component';
 import { ContasMesComponent } from './components/contas-mes/contas-mes.component';
 import { ContasFormComponent } from './components/contas-form/contas-form.component';
+import { CalculoFinanceiroComponent } from './components/calculo-financeiro/calculo-financeiro.component';
 
 
 
 @NgModule({
-  declarations: [ContasComponent, MesesComponent, MesesFilterComponent, ContasMesComponent, ContasFormComponent],
+  declarations: [ContasComponent, MesesComponent, MesesFilterComponent, ContasMesComponent, ContasFormComponent, CalculoFinanceiroComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(CONTAS_ROUTES),

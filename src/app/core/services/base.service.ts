@@ -27,7 +27,7 @@ export class BaseService<T> {
 
   public getById = (id: string): Observable<any> => {
     return this.httpClient
-      .get(`${this.baseUrl}${this.path}/${id }`, this.headerOptions())
+      .get(`${this.baseUrl}${this.path}/${id }`)
       .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 

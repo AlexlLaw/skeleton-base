@@ -5,6 +5,7 @@ export class UsuarioCreateDto {
   public ativo: boolean;
   public restricoes: string;
   public senha: string;
+  public salario: any;
 
   constructor(object?: any) {
     this.cpf = object.cpf;
@@ -13,5 +14,6 @@ export class UsuarioCreateDto {
     this.ativo = true;
     this.restricoes = object.restricoes;
     this.senha = object.senha;
+    this.salario = parseInt(object.salario);
   }
 }

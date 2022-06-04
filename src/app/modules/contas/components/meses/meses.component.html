@@ -3,7 +3,7 @@
     (filter$)="getAll($event)">
   </app-meses-filter>
 
-  <app-table-custom [items]="dataSource">
+  <app-table-custom [items]="dataSource" *ngIf="dataSource.length > 0">
     <ng-template appTableHeader>
       <tr>
         <th id="1">Mês</th>
@@ -14,8 +14,8 @@
       <tr>
         <td><p>{{ item | meses  }}</p></td>
         <td>
-            <a [routerLink]="['/contas/detalhes-mensal', item]">
-              <button class="button-custom-secondary ml-2" title="detalhes do mês">
+            <a [routerLink]="['/contas/', ano,  'detalhes-mensal', item]">
+              <button class="button-custom-secondary mr-2" title="detalhes do mês">
                 <span class="las la-arrow-right"></span>
               </button>
             </a>
@@ -34,7 +34,6 @@
 
   <div class="c-table__mobile">
     <app-card-table
-      [dataSource]="dataSource"
-      (update)="redirectUpdate($event)">
+      [dataSource]="dataSource">
     </app-card-table>
   </div>

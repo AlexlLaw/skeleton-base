@@ -6,6 +6,7 @@ export class UsuarioUpdateDto {
   public ativo: boolean;
   public restricoes: string;
   public senha: string;
+  public salario: number;
 
   constructor(object?: any) {
     this.id = object.id;
@@ -15,5 +16,6 @@ export class UsuarioUpdateDto {
     this.ativo = object.ativo;
     this.restricoes = object.restricoes;
     this.senha = object.senha;
+    this.salario = Number(object.salario);
   }
 }

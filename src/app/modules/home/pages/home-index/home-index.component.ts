@@ -21,6 +21,8 @@ export class HomeIndexComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getAll();
+    localStorage.setItem('userId', btoa(JSON.stringify(4)));
+    localStorage.setItem('name', btoa(JSON.stringify('Alex')));
   }
 
   public getAll(): void {

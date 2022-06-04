@@ -13,7 +13,7 @@ import { UsuarioForm } from './usuario-form';
 @Component({
   selector: 'app-usuario-form',
   templateUrl: './usuario-form.component.html',
-  styleUrls: ['./usuario-form.component.css']
+  styleUrls: ['./usuario-form.component.scss']
 })
 export class UsuarioFormComponent extends FormBase implements OnInit, OnDestroy {
 
@@ -57,7 +57,7 @@ export class UsuarioFormComponent extends FormBase implements OnInit, OnDestroy 
     const entity = this.usuarioForm.getDadosEnvioCreate();
     this.subs.sink = this.usuarioService.post(entity).subscribe(() => {
       SweetalertCustom.showAlertTimer2('success', MSG_SUCCES);
-      this.router.navigate(['/usuarios']);
+      this.router.navigate(['/usuarios/listar']);
     });
   }
 
@@ -65,7 +65,7 @@ export class UsuarioFormComponent extends FormBase implements OnInit, OnDestroy 
     const entity = this.usuarioForm.getDadosEnvioUpdate();
     this.subs.sink = this.usuarioService.put(this.pageId, entity).subscribe(() => {
       SweetalertCustom.showAlertTimer2('success', MSG_SUCCES);
-      this.router.navigate(['/usuarios']);
+      this.router.navigate(['/usuarios/listar']);
     });
   }
 

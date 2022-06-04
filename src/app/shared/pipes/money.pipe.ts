@@ -8,5 +8,4 @@ export class MoneyPipe implements PipeTransform {
   transform(value: unknown): unknown {
     return console.log(value);
   }
-
 }

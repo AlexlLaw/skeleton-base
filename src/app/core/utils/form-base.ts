@@ -2,12 +2,16 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { SubSink } from 'subsink';
+import { Util } from './util';
 
 export class FormBase {
 
-  public pageId = '';
-  public nameScreen = '';
-  public subs = new SubSink();
+  public pageId: string = '';
+  public nameScreen: string = '';
+  public ano: number;
+  public mes: number;
+  public subs: SubSink = new SubSink();
+  public idUser: string = Util.getIdUserSession();
 
   constructor(public router?: Router, public activatedRoute?: ActivatedRoute) {
     this.getParamsScreen();
@@ -22,6 +26,8 @@ export class FormBase {
    */
   public getParamsScreen(): void {
     this.pageId = this.activatedRoute.snapshot.params.id;
+    this.ano = Number(this.activatedRoute.snapshot.params.ano);
+    this.mes = Number(this.activatedRoute.snapshot.params.mes);
     this.nameScreen = this.getScreenName(this.pageId);
   }
 

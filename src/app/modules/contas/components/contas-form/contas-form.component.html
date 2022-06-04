@@ -1,1 +1,99 @@
-<p>contas-form works!</p>
+<div class="c-container">
+  <form [formGroup]="contasForm">
+    <div class="row" *ngIf="!ano">
+
+      <div class="col-10">
+        <label for="anos" class="l-label required">Ano</label>
+      </div>
+      <div class="col-25">
+        <select class="f-form__control" formControlName="ano">
+         <option *ngFor="let enum of enumAnos.getAllForSelect()" [value]="enum.value">{{ enum.name }}</option>
+        </select>
+      </div>
+
+      <div class="col-8 ml-2">
+        <label for="mes" class="l-label required">mes</label>
+      </div>
+      <div class="col-25">
+        <select class="f-form__control" formControlName="mes">
+         <option *ngFor="let enum of enumMeses.getAllForSelect()" [value]="enum.value">{{ enum.name }}</option>
+        </select>
+        <div class="text-danger" *ngIf="isFieldValid(contasForm, 'mes')">
+          {{ contasForm.getFirstErrorFrom('mes', 'mes') }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-10">
+        <label for="descricao" class="l-label required">descrição</label>
+      </div>
+      <div class="col-60">
+        <input inputmode="text" formControlName="descricao" type="text" class="f-form__control" id="descricao"
+          name="descricao" placeholder="Digite o descricao..." [ngClass]="[
+          isFieldValid(contasForm, 'descricao') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(contasForm, 'descricao')">
+          {{ contasForm.getFirstErrorFrom('descricao', 'descricao') }}
+        </div>
+      </div>
+    </div>
+    <!-- money [currencyMask]="{prefixed: 'R$'}" -->
+    <div class="row">
+      <div class="col-10">
+        <label for="valor" class="l-label required">Valor</label>
+      </div>
+      <div class="col-60">
+        <input
+          inputmode="text"
+
+          formControlName="valor"
+          type="text"
+          class="f-form__control"
+          id="valor"
+          name="valor"
+          placeholder="Digite o valor..."
+          [ngClass]="[
+            isFieldValid(contasForm, 'valor') ? 'error-input' : ''
+          ]">
+        <div class="text-danger" *ngIf="isFieldValid(contasForm, 'valor')">
+          {{ contasForm.getFirstErrorFrom('valor', 'valor') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-10">
+        <label for="fixo" class="l-label required">fixo</label>
+      </div>
+      <div class="col-15 mt-1">
+        <toggle-switch [selected]="contasForm.fixo"></toggle-switch>
+        <div class="text-danger" *ngIf="isFieldValid(contasForm, 'fixo')">
+          {{ contasForm.getFirstErrorFrom('fixo', 'fixo') }}
+        </div>
+      </div>
+
+      <div class="col-8">
+        <label for="pago" class="l-label required">pago</label>
+      </div>
+      <div class="col-25 mt-1">
+        <toggle-switch [selected]="contasForm.pago"></toggle-switch>
+        <div class="text-danger" *ngIf="isFieldValid(contasForm, 'pago')">
+          {{ contasForm.getFirstErrorFrom('pago', 'pago') }}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" title="Cadastrar" class="button-custom-primary b-rigth mt-1" (click)="chooseMethod()"
+        [value]="nameScreen">
+      <a *ngIf="!idMes" [routerLink]="['/contas/meses']">
+        <input type="submit" title="Cancelar" class="button-custom-secondary b-left mt-1" value="cancelar">
+      </a>
+      <a *ngIf="idMes" [routerLink]="['/contas/', ano, 'detalhes-mensal', idMes]">
+        <input type="submit" title="Cancelar" class="button-custom-secondary b-left mt-1" value="cancelar">
+      </a>
+    </div>
+  </form>
+</div>

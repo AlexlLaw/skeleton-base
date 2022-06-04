@@ -1,28 +1,39 @@
+
+    <app-calculo-financeiro></app-calculo-financeiro>
+
 <div class="c-table__desktop">
   <H1>Valor total : {{ valueTotal | currency : 'BRL' }}</H1>
   <app-table-custom [items]="dataSource">
     <ng-template appTableHeader>
       <tr>
+        <th id="1"> </th>
         <th id="1">Descrição</th>
-        <th id="1">Valor</th>
-        <th id="1">Fixo</th>
-        <th id="1">Pago</th>
-        <th id="2" align="center">Ações</th>
+        <th id="2">Valor</th>
+        <th id="3">Fixo</th>
+        <th id="3">T. de Pagamento</th>
+        <th id="4">Pago</th>
+        <th id="5" align="center">Ações</th>
       </tr>
     </ng-template>
     <ng-template appTableBody let-item>
       <tr>
-
+        <td><p><input type="checkbox"></p></td>
         <td><p>{{ item.descricao }}</p></td>
         <td><p>{{ item.valor | currency : 'BRL' }}</p></td>
         <td><p> <input type="checkbox" [checked]="item.fixo"></p></td>
-        <td><p><input type="checkbox" [checked]="item.fixo"></p></td>
+        <td><p>{{ verifyTempoPagamento(item.tempoDeConta, item.fixo, item.anoTodo) }}</p></td>
+        <td><p><input type="checkbox" [checked]="item.pago"></p></td>
         <td>
-            <a [routerLink]="['/contas/detalhes-mensal', item]">
-              <button class="button-custom-secondary ml-2" title="detalhes do mês">
+            <a [routerLink]="['/contas/',ano , 'mensal', pageId, 'editar', item.id]">
+              <button class="button-custom-secondary mr-2" title="Detalhes da conta">
                 <span class="las la-arrow-right"></span>
               </button>
             </a>
+
+            <button class="button-custom-secondary" (click)="remove(item)" title="Remover">
+              <span class="las la-trash"></span>
+            </button>
+
         </td>
       </tr>
     </ng-template>
@@ -34,11 +45,19 @@
       </tr>
     </ng-template>
   </app-table-custom>
+
   </div>
+
 
   <div class="c-table__mobile">
     <app-card-table
       [dataSource]="dataSource"
       >
     </app-card-table>
+  </div>
+
+  <div class="row">
+    <a [routerLink]="['/contas/meses']">
+      <input type="submit" title="Cancelar" class="button-custom-secondary b-left mt-1" value="cancelar">
+    </a>
   </div>

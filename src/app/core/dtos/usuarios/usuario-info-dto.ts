@@ -7,6 +7,7 @@ export class UsuarioInfoDto {
   public primeiroAcesso: boolean;
   public restricoes: string;
   public senha: string;
+  public salario: number;
 
   constructor(object?: any) {
     this.id = object.id;
@@ -17,5 +18,6 @@ export class UsuarioInfoDto {
     this.primeiroAcesso = object.primeiroAcesso;
     this.restricoes = object.restricoes;
     this.senha = object.senha;
+    this.salario = object.salario;
   }
 }

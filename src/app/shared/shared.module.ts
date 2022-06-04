@@ -22,6 +22,7 @@ import { OnlyCharDirective } from './diretrivas/only-char.directive';
 import { OnlyNumberDirective } from './diretrivas/only-number.directive';
 import { MesesPipe } from './pipes/meses.pipe';
 import { MoneyPipe } from './pipes/money.pipe';
+import { CurrencyMaskDirective } from './diretrivas/currency-mask.directive';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MoneyPipe } from './pipes/money.pipe';
     OnlyNumberDirective,
     MesesPipe,
     MoneyPipe,
+    CurrencyMaskDirective,
   ],
   imports: [
     CommonModule,
@@ -60,6 +62,7 @@ import { MoneyPipe } from './pipes/money.pipe';
     AtivoPipe,
     ToggleSwitchComponent,
     MaskDirective,
+    CurrencyMaskDirective,
     OnlyCharDirective,
     OnlyNumberDirective,
     MesesPipe,

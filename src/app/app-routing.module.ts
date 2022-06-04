@@ -14,7 +14,7 @@ export const APP_ROUTES: Routes = [
   {
     path: '',
     component: LayoutAuthComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',

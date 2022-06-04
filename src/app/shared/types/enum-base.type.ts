@@ -1,1 +1,1 @@
-export declare type EnumBaseType = { name: string; value: string | boolean | null; };
+export declare type EnumBaseType = { name: string; value: string | boolean | null | number; };

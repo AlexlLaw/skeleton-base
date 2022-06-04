@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 import { TokenService } from 'src/app/core/auth/token/Token.service';
 import { BaseService } from 'src/app/core/services/base.service';
@@ -32,5 +33,13 @@ export class UsuarioService extends BaseService<any> {
 
   public isLogged() {
     return this.tokenService.hasToken();
+  }
+
+
+  /**refatorar */
+  public getByCalculoFinanceiro = (id: any): Observable<any> => {
+    return this.httpClient
+      .get(`${this.baseUrl}${this.path}/${id}/calculoFinanceiro`, this.headerOptions())
+      .pipe(catchError((e: HttpErrorResponse) => throwError(e)));
   }
 }
